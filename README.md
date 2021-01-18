@@ -1,6 +1,6 @@
 # The Destination Dictionary
 
-![hello](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/Phase%203%20Project.png?raw=true)
+![hello](https://github.com/tiaplagata/capstone-project/blob/main/Images/The%20Destination%20Dictionary.png?raw=true)
 
 # Navigation
 
@@ -30,9 +30,9 @@ In the EDA portion, I explored the following questions:
 * Are customers in certain areas more likely to churn?
 
  
-**Scope & Data Used**
+**Methodology & Data Used**
 
-This project used the churn in telecoms dataset, which can be found in the data folder, and on kaggle via [this link](https://www.kaggle.com/becksddf/churn-in-telecoms-dataset). This dataset included 21 columns and 3333 unique values. It was already pretty clean with no large outliers or null values.
+This project utilized data from 12 top cities from TripAdvisor's list of Traveler's Choice destinations for Popular World Destinations 2020, which can be found via [this link](https://www.tripadvisor.com/TravelersChoice-Destinations). The dataset was compiled by scraping the titles from Tripadvisor 'attractions' for each of the 12 cities. The final dataset included over 28,000 unique text values.
 
 
 # EDA
@@ -120,7 +120,7 @@ The final model's feature importances are graphed below.
 ## Model Fit & Score
 
 The final model had the following training and validation recall scores:
-* Validation Recall Score 0.83
+* Testing Recall Score 0.83
 * Training Recall Score 0.88
 
 Since these recall scores are so close, we can assume the model is slightly overfit, but overall very good on recall. This model produced only 9 (2%) false negatives for the validation set. It produced only 1 (0.003%) false positive from the validation set, but if our customer retention strategy is to keep these customers engaged, it is not a bad thing to keep a customer engaged who is mispredicted as potentially exiting.
