@@ -15,6 +15,7 @@
 * [Non-Technical Video Presentation](https://youtu.be/8KW4okIJfRc)
 * [Jupyter Notebook with Data Collection](https://github.com/tiaplagata/capstone-project/blob/main/Notebooks/Data_Collection.ipynb)
 * [Jupyter Notebook with Exploratory Data Analysis (EDA) and Modeling](https://github.com/tiaplagata/capstone-project/blob/main/Notebooks/EDA_and_Modeling.ipynb)
+* [Dash App Repo](https://github.com/tiaplagata/dash-travel-app)
 
 
 # Project Overview
