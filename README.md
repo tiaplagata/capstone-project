@@ -112,4 +112,11 @@ If I had time to explore further, I would investigate the following:
 * Improve Dash App
 
 
-![thank-you](https://github.com/tiaplagata/capstone-project/blob/main/Images/The%20Destination%20Dictionary_Thanks.png?raw=true)
+
+# Thank You!
+
+I hope this project inspires your future travels! Please contact me with any questions:
+
+- tiaplagata@gmail.com
+- https://github.com/tiaplagata
+- https://www.linkedin.com/in/tiaplagata/
