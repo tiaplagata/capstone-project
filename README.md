@@ -92,6 +92,9 @@ The Destination Dictionary final product is a dash app hosted on my local machin
 ![dash-app](https://github.com/tiaplagata/capstone-project/blob/main/Images/Dash_app_screenshot.png?raw=true)
 
 
+See the full dash app repo [here](https://github.com/tiaplagata/dash-travel-app)
+
+
 ### Recommendations for Use in the Travel Industry
 
 - Integrate the Destination Dictionary technology into pages where Top Destination lists are published to drive engagement with future travelers and drive traffic to affiliate links
