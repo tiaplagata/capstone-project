@@ -19,14 +19,11 @@
 
 # Project Overview
 
-SyriaTel Communications is a Telecommunications company that is looking to predict and prevent customer churn. Customer churn is when a customer leaves/discontinues their service with SyriaTel. Customer churn is a major problem for many service-based companies because it is so expensive. Not only does the company lose the customer's monthly/yearly payment, but they also incur a customer acquisition cost to replace that customer.
+The COVID-19 pandemic has severely affected the travel industry. International travel has been impacted, and in turn travel companies and travel websites have lost much of their engagement. 
 
-To help SyriaTel fix the problem of customer churn, I first conducted an Exploratory Data Analysis (EDA) and then built a machine learning classifier that will predict the customers that are going to churn. This way, SyriaTel can create a more robust strategy to circumvent their customers from churning.
+However, with the development of new vaccines for the virus, there is hope on the horizon for international travel and a time where life is somewhat back to normal. In order to increase engagement in the travel industry and increase excitement about travel opportunities, the Destination Dictionary was born!
 
-In the EDA portion, I explored the following questions: 
-* Is calling customer service a sign of customer unhappiness/potential churn?
-* How much are people using their plan? What can this tell us about churn?
-* Are customers in certain areas more likely to churn?
+The Destination Dictionary is a data product that allows future travelers to get a prediction for their perfect destination with the input of just a few words. Trained on over 28,000 unique text data points, the Destination Dictionary is able to predict a destination from 12 different popular cities with 81% accuracy based on text input of activities you want to do while on vacation. 
 
  
 **Methodology & Data Used**
@@ -36,101 +33,73 @@ This project utilized data from 12 top cities from TripAdvisor's list of Travele
 
 # EDA
 
-## Is calling customer service a sign of customer unhappiness/potential churn?
+The Exploratory Data Analysis for this project was mainly devoted to exploring some cleaning and preprocessing techniques for the text data using Natural Language Processing. I also investigated different vectorization strategies for the data and looked into specific words/phrases that needed to be cleaned/removed from the dataset.
 
-**Findings**
+## Findings
 
-Our current churn rate for the training data set is about 14.5%. When we look at customer service calls, we can see that as the number of customer service calls increases, the *likelihood* of churning increases as well. Specifically, with at least 4 customer service calls, the likelihood of a customer churning increases from about 10% to 50%.
+In order to classify the text data into different classes, I experimented with 3 different vectorization strategies:
+
+- Count Vectorization
+- TF-IDF Vectorization
+- Count Vectorization using Bi-Grams
+
+After exploring the document term matrices, word clouds, and most frequent words from each of the 3 vectorization techniques, I concluded that the best vectorization strategy is to use TF-IDF vectorization. This strategy is often used to classify news articles into their correct topics, which is a similar use-case to the Destination Dictionary. The purpose here is to classify the text to the correct city, therefore TF-IDF vectorization provides the appropriate ratio to reflect how important a word is to each specific city. 
+
+## Sample Word Clouds with TF-IDF Vectorization
 
 ![rome](https://github.com/tiaplagata/capstone-project/blob/main/Images/rome_wordcloud.png?raw=true)
-
-Customer service calls alone cannot guarantee that a customer will churn. In fact, the majority of customers who DID NOT churn made 1-2 customer service calls. However, it is important to note that the majority people who DID churn made 1-4 calls to customer service. Therefore, more than 3 calls to customer service should be a red flag that a customer is more likely to churn.
 
 ![goa](https://github.com/tiaplagata/capstone-project/blob/main/Images/goa_wordcloud.png?raw=true)
 
 ![dubai](https://github.com/tiaplagata/capstone-project/blob/main/Images/dubai_wordcloud.png?raw=true)
 
 
-**Recommendation:** 
+## Recommendation for Modeling
 
-Based on these findings, I would recommend revisiting our customer service protocol. It may be useful to offer a larger incentive/discount to customers making more than 3 calls to customer service. 
-
-
-## How much are people using their plan? What can this tell us about churn?
-
-**Findings**
-
-It is clear that the customers who churned and those that did not churn had almost exactly the same usage across day, eve, night and international calls. The rates for international minutes are the same regardless of whether the customer has an international plan or not (27 cents per minute). It is also interesting to note that the percentage of customers who churned was higher for customers with international plans than for customers without international plans. Because of this similar charge for international calls, it is possible that the customers who had an international plan and churned did not feel that paying for the international plan was worth it.
-
-![international_plan](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/international_plan_bar_subplots.png?raw=true)
-
-**Recommendations:**
-
-Based on these findings, I recommend changing the rates for international minutes. If a customer has an international plan, they should have cheaper rates for international calls than a customer without an international plan.
-
-
-## Are customers in certain areas more likely to churn?
-
-**Findings**
-
-It is clear that there are certain states with much higher churn. When grouped by state, Texas has a much higher churn than any other state (27%). New Jersey, Maryland and California also have higher churn (over 23%). States with the least churn include Hawaii and Iowa (under .05%). 
-
-![state_choropleth](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/churn_by_state_choropleth.png?raw=true)
-
-There could be a few reasons for this difference in churn in different states. One reason could be the lack of competitors in places like Hawaii and Iowa, which are more remote. States such as California, New Jersey or Texas could have many other big players in the market, which causes our customers to have other options when they feel inclined to leave. Another reason could be the lack of good service in certain areas in states with high churn.
-
-**Recommendations**
-
-Based on these findings, I would recommend looking into competitors in Texas, California, New Jersey, and other states with high churn to see if they are offering introductory offers that might compel some of our customers to churn. I also recommend looking into the cell signal in these states with higher churn to see if there are any deadzones contributing to the higher rates. 
-
-## EDA Conclusion
-
-In conclusion, calls to customer service seems to be one of the biggest indicators of customer churn. We can also see higher churn in certain states, although the reasons why specific states are more likely to churn is unclear based on this data. We can also see that customers may not be happy with their international plans, which is why customers with an international plan are more likely to churn than customers without an international plan.
+Based on the results of the EDA, I would recommend removing the following words from the corpora/text data:
+- City names (i.e. 'Paris', 'Rome', 'Sicily', etc)
+    - Most of the attractions are listed with the city name included (ex. Paris Champagne Tasting), however when the model gets new data, it will not have the city name. For this reason, it is best to train the model without the city names to get scores that are more indicative to its performance for its use-case.
+- The words 'private', 'airport', and 'transfer'
+    - Most of the cities have 'Private airport transfer' as an attraction listed in their corpora. Since this does not tell us anything about the city, we should remove these data points/words before training the model.
 
 
 # Model Analysis
 
-My final model was a Gradient Boosting classifier, which can predict customer churn with 83% recall.
-    
-## Metric Used
-
-I used recall to score this model because with churn rate, false negatives will cost us more than false positives. For example, misidentifying someone as 'churned' and hitting them with a customer retention strategy to keep them engaged would be less costly than missing someone who churned, losing them as a customer AND having to pay a new customer acquisition cost to replace them. 
-
-
-## Cost Benefit Analysis
-
-Let's say the cost of a False Positive is having to give a customer a discount of 50% off one month of free service when they were not actually going to churn. For this analysis we will say that the **cost of a FP = 25 USD per customer (-25)**.
-
-Alternatively, the cost of a False Negative is losing that customer (and their monthly payment of 50 USD) and having to go out and get a new customer (customer acqusition cost of 50 USD). Therefore, we will say that the **cost of a FN = 100 USD per customer (-100)**.
-
-The benefit of a True Positive is keeping that customer on and having them continue paying their 50 USD monthly payment, minus the 50% discount. **Benefit of TP = 25**
-
-The **benefit of a True Negative = 0** since they were not going to churn and we predicted that, so we did not offer any discounts.
-
-Based on this cost benefit analysis, our expected value from this strategy is 52 cents per customer per month. That may not seem like much, but for millions of customers it would add up. The good news here is that with this model predicting churn, we are not LOSING money! We can see the breakdown of each cost and benefit multiplied by the number of TP, TN, FP, FNs on the confusion matrix above. 
-
-
-## Feature Importances
-
-The final model's feature importances are graphed below. 
-
-![confusion-matrix](https://github.com/tiaplagata/capstone-project/blob/main/Images/conf_matrix.png?raw=true)
+My final model is a Multinomial Naive Bayes classifier, which can predict a destination with 81% accuracy and an 82% F1 score.
 
 
 ## Model Fit & Score
 
-The final model had the following training and validation recall scores:
-* Testing Recall Score 0.83
-* Training Recall Score 0.88
+I used accuracy and F1 score to score this model. Since there are 12 classes, I want to model to be accurate, however, F1 score is also important to consider since there is some class imbalance in the dataset and to account for the model's false positives and false negatives.
 
-Since these recall scores are so close, we can assume the model is slightly overfit, but overall very good on recall. This model produced only 9 (2%) false negatives for the validation set. It produced only 1 (0.003%) false positive from the validation set, but if our customer retention strategy is to keep these customers engaged, it is not a bad thing to keep a customer engaged who is mispredicted as potentially exiting.
+The final model had the following training and testing accuracy and F1 scores:
+* Testing Accuracy Score 0.81 | F1 Score 0.82
+* Training Accuracy Score 0.86 | F1 Score 0.86
+
+Looking at the above scores for both accuracy and F1, we can conclude that the model is a tiny bit overfit, but overall very accurate, especially considering that there are 12 classes.
+
+## Confusion Matrix
+
+The final model's confusion matrix from the test set is depicted below. 
+
+![confusion-matrix](https://github.com/tiaplagata/capstone-project/blob/main/Images/conf_matrix.png?raw=true)
 
 
-## Model Conclusion
+# The Final Product | Dash App
 
-In conclusion, based on this model's recall score and cost benefit analysis, using this model to predict the churn of SyriaTel's customers will result in a large cost savings, and even an opportunity to make money ($0.52 per customer per month). 
+The Destination Dictionary final product is a dash app hosted on my local machine (soon to be hosted on Heroku as well!). Check out a screenshot below, or see my non-technical walkthrough to see it in action!
 
 ![dash-app](https://github.com/tiaplagata/capstone-project/blob/main/Images/Dash_app_screenshot.png?raw=true)
+
+
+## Recommendations for Use in the Travel Industry
+
+- Integrate the Destination Dictionary technology into pages where Top Destination lists are published to drive engagement with future travelers and drive traffic to affiliate links
+
+- Use the Destination Dictionary technology paired with a chatbot on travel websites to act as a virtual travel agent
+
+- Collect the data from users to better understand travel trends, popular destinations and popular activities
+
 
 
 # Future Work
