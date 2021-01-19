@@ -110,3 +110,6 @@ If I had time to explore further, I would investigate the following:
 * Train the model on more classes/cities to include the entire 25 destination list
 * Train a Deep NLP model on the dataset using LSTMs and GRUs
 * Improve Dash App
+
+
+![thank-you](https://github.com/tiaplagata/capstone-project/blob/main/Images/The%20Destination%20Dictionary_Thanks.png?raw=true)
