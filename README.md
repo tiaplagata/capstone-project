@@ -26,7 +26,7 @@ However, with the development of new vaccines for the virus, there is hope on th
 The Destination Dictionary is a data product that allows future travelers to get a prediction for their perfect destination with the input of just a few words. Trained on over 28,000 unique text data points, the Destination Dictionary is able to predict a destination from 12 different popular cities with 81% accuracy based on text input of activities you want to do while on vacation. 
 
  
-**Methodology & Data Used**
+### Methodology & Data Used
 
 This project utilized data from 12 top cities from TripAdvisor's list of Traveler's Choice destinations for Popular World Destinations 2020, which can be found via [this link](https://www.tripadvisor.com/TravelersChoice-Destinations). The dataset was compiled by scraping the titles from Tripadvisor 'attractions' for each of the 12 cities. The final dataset included over 28,000 unique text values.
 
@@ -35,7 +35,7 @@ This project utilized data from 12 top cities from TripAdvisor's list of Travele
 
 The Exploratory Data Analysis for this project was mainly devoted to exploring some cleaning and preprocessing techniques for the text data using Natural Language Processing. I also investigated different vectorization strategies for the data and looked into specific words/phrases that needed to be cleaned/removed from the dataset.
 
-## Findings
+### Findings
 
 In order to classify the text data into different classes, I experimented with 3 different vectorization strategies:
 
@@ -45,7 +45,7 @@ In order to classify the text data into different classes, I experimented with 3
 
 After exploring the document term matrices, word clouds, and most frequent words from each of the 3 vectorization techniques, I concluded that the best vectorization strategy is to use TF-IDF vectorization. This strategy is often used to classify news articles into their correct topics, which is a similar use-case to the Destination Dictionary. The purpose here is to classify the text to the correct city, therefore TF-IDF vectorization provides the appropriate ratio to reflect how important a word is to each specific city. 
 
-## Sample Word Clouds with TF-IDF Vectorization
+### Sample Word Clouds with TF-IDF Vectorization
 
 ![rome](https://github.com/tiaplagata/capstone-project/blob/main/Images/rome_wordcloud.png?raw=true)
 
@@ -54,7 +54,7 @@ After exploring the document term matrices, word clouds, and most frequent words
 ![dubai](https://github.com/tiaplagata/capstone-project/blob/main/Images/dubai_wordcloud.png?raw=true)
 
 
-## Recommendation for Modeling
+### Recommendation for Modeling
 
 Based on the results of the EDA, I would recommend removing the following words from the corpora/text data:
 - City names (i.e. 'Paris', 'Rome', 'Sicily', etc)
@@ -68,7 +68,7 @@ Based on the results of the EDA, I would recommend removing the following words 
 My final model is a Multinomial Naive Bayes classifier, which can predict a destination with 81% accuracy and an 82% F1 score.
 
 
-## Model Fit & Score
+### Model Fit & Score
 
 I used accuracy and F1 score to score this model. Since there are 12 classes, I want to model to be accurate, however, F1 score is also important to consider since there is some class imbalance in the dataset and to account for the model's false positives and false negatives.
 
@@ -78,7 +78,7 @@ The final model had the following training and testing accuracy and F1 scores:
 
 Looking at the above scores for both accuracy and F1, we can conclude that the model is a tiny bit overfit, but overall very accurate, especially considering that there are 12 classes.
 
-## Confusion Matrix
+### Confusion Matrix
 
 The final model's confusion matrix from the test set is depicted below. 
 
@@ -92,7 +92,7 @@ The Destination Dictionary final product is a dash app hosted on my local machin
 ![dash-app](https://github.com/tiaplagata/capstone-project/blob/main/Images/Dash_app_screenshot.png?raw=true)
 
 
-## Recommendations for Use in the Travel Industry
+### Recommendations for Use in the Travel Industry
 
 - Integrate the Destination Dictionary technology into pages where Top Destination lists are published to drive engagement with future travelers and drive traffic to affiliate links
 
