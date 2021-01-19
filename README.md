@@ -11,11 +11,10 @@
 
 # Important Links
 
-* [Slideshow Presentation](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Non_Technical_Slideshow.pdf)
+* [Slideshow Presentation](https://github.com/tiaplagata/capstone-project/blob/main/The%20Destination%20Dictionary.pdf)
 * [Non-Technical Video Presentation](https://youtu.be/8KW4okIJfRc)
-* [Jupyter Notebook with Cleaning](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Notebooks/Cleaning.ipynb)
-* [Jupyter Notebook with Exploratory Data Analysis (EDA)](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Notebooks/EDA.ipynb)
-* [Jupyter Notebook Modeling and Validation](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Notebooks/Modeling.ipynb)
+* [Jupyter Notebook with Data Collection](https://github.com/tiaplagata/capstone-project/blob/main/Notebooks/Data_Collection.ipynb)
+* [Jupyter Notebook with Exploratory Data Analysis (EDA) and Modeling](https://github.com/tiaplagata/capstone-project/blob/main/Notebooks/EDA_and_Modeling.ipynb)
 
 
 # Project Overview
@@ -43,11 +42,14 @@ This project utilized data from 12 top cities from TripAdvisor's list of Travele
 
 Our current churn rate for the training data set is about 14.5%. When we look at customer service calls, we can see that as the number of customer service calls increases, the *likelihood* of churning increases as well. Specifically, with at least 4 customer service calls, the likelihood of a customer churning increases from about 10% to 50%.
 
-![customer_service](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/customer_service_bar.png?raw=true)
+![rome](https://github.com/tiaplagata/capstone-project/blob/main/Images/rome_wordcloud.png?raw=true)
 
 Customer service calls alone cannot guarantee that a customer will churn. In fact, the majority of customers who DID NOT churn made 1-2 customer service calls. However, it is important to note that the majority people who DID churn made 1-4 calls to customer service. Therefore, more than 3 calls to customer service should be a red flag that a customer is more likely to churn.
 
-![customer_service_2](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/customer_service_boxen.png?raw=true)
+![goa](https://github.com/tiaplagata/capstone-project/blob/main/Images/goa_wordcloud.png?raw=true)
+
+![dubai](https://github.com/tiaplagata/capstone-project/blob/main/Images/dubai_wordcloud.png?raw=true)
+
 
 **Recommendation:** 
 
@@ -105,8 +107,6 @@ The benefit of a True Positive is keeping that customer on and having them conti
 
 The **benefit of a True Negative = 0** since they were not going to churn and we predicted that, so we did not offer any discounts.
 
-![cb_analysis](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/cb_analysis.png?raw=true)
-
 Based on this cost benefit analysis, our expected value from this strategy is 52 cents per customer per month. That may not seem like much, but for millions of customers it would add up. The good news here is that with this model predicting churn, we are not LOSING money! We can see the breakdown of each cost and benefit multiplied by the number of TP, TN, FP, FNs on the confusion matrix above. 
 
 
@@ -114,7 +114,7 @@ Based on this cost benefit analysis, our expected value from this strategy is 52
 
 The final model's feature importances are graphed below. 
 
-![feat_importances](https://github.com/tiaplagata/dsc-phase-3-project/blob/main/Images/feature_importances.png?raw=true)
+![confusion-matrix](https://github.com/tiaplagata/capstone-project/blob/main/Images/conf_matrix.png?raw=true)
 
 
 ## Model Fit & Score
@@ -129,6 +129,8 @@ Since these recall scores are so close, we can assume the model is slightly over
 ## Model Conclusion
 
 In conclusion, based on this model's recall score and cost benefit analysis, using this model to predict the churn of SyriaTel's customers will result in a large cost savings, and even an opportunity to make money ($0.52 per customer per month). 
+
+![dash-app](https://github.com/tiaplagata/capstone-project/blob/main/Images/Dash_app_screenshot.png?raw=true)
 
 
 # Future Work
