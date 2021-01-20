@@ -67,7 +67,7 @@ Based on the results of the EDA, I would recommend removing the following words 
 
 # Model Analysis
 
-My final model is a Multinomial Naive Bayes classifier, which can predict a destination with 81% accuracy and an 82% F1 score.
+My final model is a Multinomial Naive Bayes classifier, which can predict a destination with 81% accuracy and an 82% F1 score. The text data put into this model is not lemmatized, but is lowercased with stopwords removed and city names removed.
 
 
 ### Model Fit & Score
