@@ -7,12 +7,13 @@
 * [Project Overview](#Project-Overview)
 * [EDA](#EDA)
 * [Model Analysis](#Model-Analysis)
+* [The Final Product](#The-Final-Product)
 * [Future Work](#Future-Work)
 
 # Important Links
 
 * [Slideshow Presentation](https://github.com/tiaplagata/capstone-project/blob/main/The%20Destination%20Dictionary.pdf)
-* [Non-Technical Video Presentation](https://youtu.be/8KW4okIJfRc)
+* [Non-Technical Video Presentation](https://youtu.be/2cRDhGSXP6o)
 * [Jupyter Notebook with Data Collection](https://github.com/tiaplagata/capstone-project/blob/main/Notebooks/Data_Collection.ipynb)
 * [Jupyter Notebook with Exploratory Data Analysis (EDA) and Modeling](https://github.com/tiaplagata/capstone-project/blob/main/Notebooks/EDA_and_Modeling.ipynb)
 * [Dash App Repo](https://github.com/tiaplagata/dash-travel-app)
@@ -86,7 +87,7 @@ The final model's confusion matrix from the test set is depicted below.
 ![confusion-matrix](https://github.com/tiaplagata/capstone-project/blob/main/Images/conf_matrix.png?raw=true)
 
 
-# The Final Product | Dash App
+# The Final Product
 
 The Destination Dictionary final product is a dash app hosted on my local machine (soon to be hosted on Heroku as well!). Check out a screenshot below, or see my non-technical walkthrough to see it in action!
 
