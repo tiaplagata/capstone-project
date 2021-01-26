@@ -103,7 +103,7 @@ See the full dash app repo [here](https://github.com/tiaplagata/dash-travel-app)
 
 - Use the Destination Dictionary technology paired with a chatbot on travel websites to act as a virtual travel agent
 
-- Collect the data from users to better understand travel trends, popular destinations and popular activities
+- Offer paid sponsorship of the 'default' city-- ex. Tourism Board of Bali can pay be the first recommended city when you open the page
 
 
 
