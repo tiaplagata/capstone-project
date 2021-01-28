@@ -17,6 +17,7 @@
 * [Jupyter Notebook with Data Collection](https://github.com/tiaplagata/capstone-project/blob/main/Notebooks/Data_Collection.ipynb)
 * [Jupyter Notebook with Exploratory Data Analysis (EDA) and Modeling](https://github.com/tiaplagata/capstone-project/blob/main/Notebooks/EDA_and_Modeling.ipynb)
 * [Dash App Repo](https://github.com/tiaplagata/dash-travel-app)
+* [Blog Post About Creating Beautiful Word Clouds](https://tiaplagata.medium.com/how-to-create-beautiful-word-clouds-in-python-cfcf85141214?sk=ca4aa4e0dcfe7165e83e87da3544efac)
 
 
 # Project Overview
