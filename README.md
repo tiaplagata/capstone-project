@@ -12,6 +12,7 @@
 
 # Important Links
 
+* [Interactive Dash App](http://destination-dictionary.herokuapp.com/)
 * [Slideshow Presentation](https://github.com/tiaplagata/capstone-project/blob/main/The%20Destination%20Dictionary.pdf)
 * [Non-Technical Video Presentation](https://youtu.be/2cRDhGSXP6o)
 * [Jupyter Notebook with Data Collection](https://github.com/tiaplagata/capstone-project/blob/main/Notebooks/Data_Collection.ipynb)
@@ -95,6 +96,7 @@ The Destination Dictionary final product is a dash app hosted on my local machin
 ![dash-app](https://github.com/tiaplagata/capstone-project/blob/main/Images/Dash_app_screenshot.png?raw=true)
 
 
+See the interactive app [here](http://destination-dictionary.herokuapp.com/)
 See the full dash app repo [here](https://github.com/tiaplagata/dash-travel-app)
 
 
